@@ -1,0 +1,78 @@
+@import url("./mixin.css");
+
+.root {
+}
+
+.control {
+  --_control-color: var(--color-grey);
+
+  @mixin text-4-full var(--color-grey);
+  @mixin transition;
+
+  &[data-active] {
+    --_control-bg-color: transparent !important;
+    --_control-border-color: transparent !important;
+    --text-color: var(--color-blue) !important;
+  }
+
+  &:active {
+    transform: none;
+  }
+
+  @mixin light {
+    --_control-border-color: transparent;
+    --_control-bg-color: transparent;
+    --_control-bg-hover: transparent;
+  }
+
+  & svg {
+    & path {
+      @mixin transition;
+    }
+  }
+
+  &:not([data-disabled]) {
+    & svg {
+      & path {
+        fill: var(--color-grey);
+      }
+    }
+    @mixin hover {
+      --text-color: var(--color-blue);
+
+      &:first-child {
+        --_control-border-color: var(--color-blue) !important;
+      }
+
+      &:last-child {
+        --_control-border-color: var(--color-blue) !important;
+      }
+
+      & svg {
+        & path {
+          fill: var(--color-blue);
+        }
+      }
+    }
+  }
+}
+
+.dots {
+  align-items: flex-end;
+  padding: rem(8px) rem(8px) rem(3px) rem(8px);
+
+  & svg {
+    & path {
+      fill: var(--color-grey);
+    }
+  }
+}
+
+[data-mantine-color-scheme="light"] {
+  & :local(.control):first-child {
+    --_control-border-color: var(--color-grey);
+  }
+  & :local(.control):last-child {
+    --_control-border-color: var(--color-grey);
+  }
+}

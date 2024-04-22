@@ -1,0 +1,40 @@
+.headerTitle {
+  font-size: 54px;
+  font-weight: 600;
+  color: white;
+}
+.headerBannerWrapper {
+  padding: 4.5px 0;
+  align-self: stretch;
+}
+.headerBannerRadius {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.headerBanner {
+  position: relative;
+  background: linear-gradient(-40.5deg, rgba(98, 95, 244, 0.2) 11.383%, rgba(12, 13, 16, 0.2) 32.415%);
+  padding: 16px 64px;
+  height: 100%;
+}
+
+.headerBannerText {
+  font-size: 20px;
+  color: white;
+  font-family: "ProximaNova";
+}
+
+.headerBannerCoin {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.headerBannerBitcoin {
+  top: -10px;
+  left: -50px;
+}
+.headerBannerTether {
+  right: -50px;
+  top: -15px;
+}

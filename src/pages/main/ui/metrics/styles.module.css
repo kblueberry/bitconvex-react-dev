@@ -1,0 +1,48 @@
+@import url("@/app/styles/mixin.css");
+
+.metrics-wrapper {
+  flex: 1;
+  padding: var(--adaptive-section-py) 0;
+  position: relative;
+  z-index: 2;
+}
+
+.metrics-title {
+  color: white;
+  /* font-size: 20px !important ; */
+}
+
+.metrics-title-highlighted {
+  font-size: inherit !important;
+  font-style: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  font-family: inherit !important;
+  @mixin textLinearGradient;
+}
+
+.metrics-sub-title {
+  &[data-variant="text-2"] {
+    --text-color: var(--color-grey) !important;
+  }
+}
+
+.metric-wrapper {
+  padding: clamp(1.5rem, 1.875vw, 1.875rem);
+  /*min-width: rem(373.5px);*/
+  border-radius: rem(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--color-black);
+}
+
+.metric-icon-wrapper {
+  border-radius: rem(4px);
+  background: var(--gradient-linear);
+  box-shadow: 0 4px 16px 0 rgba(98, 95, 244, 0.32);
+}
+
+.metric-title {
+  --text-fz: rem(32px);
+  --text-color: var(--color-white);
+  font-weight: 400 !important;
+}

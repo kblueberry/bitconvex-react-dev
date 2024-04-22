@@ -1,0 +1,2 @@
+export { SwiperPayments } from './ui'
+

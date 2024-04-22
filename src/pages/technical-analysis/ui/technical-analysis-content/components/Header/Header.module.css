@@ -1,0 +1,19 @@
+.iconWrapper {
+  padding: 7px;
+  border: var(--border1);
+  border-radius: 8px;
+  background-color: var(--color-black);
+  height: 65px;
+}
+
+.headerTitle {
+  font-size: 54px;
+  font-weight: 600;
+  color: white;
+}
+
+.headerDescription {
+  font-size: 20px;
+  color: var(--color-grey);
+  font-family: "ProximaNova";
+}

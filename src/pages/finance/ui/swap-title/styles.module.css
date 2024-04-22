@@ -1,0 +1,8 @@
+@import url("@/app/styles/mixin.css");
+
+.text-icon{
+  color:var(--color-grey) !important;
+  line-height: rem(24.36px);
+  font-family: ProximaNova;
+  font-size: var(--text-2-fz);
+}
