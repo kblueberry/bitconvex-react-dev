@@ -313,7 +313,7 @@ export const TradeChart = () => {
 
   return (
     <Container padding={48} className={classes.chartContainer}>
-      <Group gap={8}>
+      <Group gap={8} className={classes.tradeChartWrapper}>
         <Text className={classes.tradeChartTitle}>Bitcoin/USDT Chart</Text>
         <Coins />
       </Group>

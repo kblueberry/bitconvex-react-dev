@@ -104,3 +104,13 @@
     background-color: rgb(228, 34, 34);
   }
 }
+
+.tabsWrapper {
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+
+  .tabBadge {
+    width: 50%;
+  }
+}
