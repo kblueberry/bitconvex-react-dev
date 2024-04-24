@@ -1,14 +1,7 @@
-import { Stack, Table, Text } from "@mantine/core";
 import clsx from "clsx";
-import { useState } from "react";
 
-import { NegativeTrendIcon } from "@/shared/ui/icon/NegativeTrendIcon";
-import { PositiveTrendIcon } from "@/shared/ui/icon/PositiveTrendIcon";
-import { SortIcon } from "@/shared/ui/icon/SortIcon";
-
-import { Container } from "../Container/Container";
-import { Bids } from "./Bids/Bids";
 import classes from "./OrderBook.module.css";
+import { StocksTable } from "./StocksTable/StocksTable";
 
 const categories = ["All", "Asks", "Bids"] as const;
 const header = ["Price USD", "Qty BTC"];
@@ -73,36 +66,8 @@ const rows = [
 export const OrderBookMobile = ({ activeCategory }: { activeCategory: string }) => {
   return (
     <div className={clsx(classes.flexSpaceBetween, classes.rowDirected)}>
-      <Table>
-        <Table.Thead className={classes.tableTHead}>
-          <Table.Tr>
-            {header.map((head) => (
-              <Table.Th key={head} className={classes.tableTh}>
-                <div>
-                  <p>{head}</p>
-                  <SortIcon />
-                </div>
-              </Table.Th>
-            ))}
-          </Table.Tr>
-        </Table.Thead>
-        <Bids rows={rows} isPositive={activeCategory === "All" || activeCategory === "Bids"} />
-      </Table>
-      <Table>
-        <Table.Thead className={classes.tableTHead}>
-          <Table.Tr>
-            {header.map((head) => (
-              <Table.Th key={head} className={classes.tableTh}>
-                <div>
-                  <p>{head}</p>
-                  <SortIcon />
-                </div>
-              </Table.Th>
-            ))}
-          </Table.Tr>
-        </Table.Thead>
-        <Bids rows={rows} isPositive={false} />
-      </Table>
+      {(activeCategory === "All" || activeCategory === "Bids") && <StocksTable header={header} rows={rows} isPositive={true} />}
+      {(activeCategory === "All" || activeCategory === "Asks") && <StocksTable header={header} rows={rows} isPositive={false} />}
     </div>
   );
 };
