@@ -1,3 +1,5 @@
+@import url("../../../../../../app//styles//mixin.css");
+
 .orderBookTitle {
   color: white;
   font-size: 20px;
@@ -135,4 +137,10 @@
 
 .rowDirected {
   flex-direction: row;
+}
+
+.orderRowReversed {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
 }

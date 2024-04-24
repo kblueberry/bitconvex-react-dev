@@ -4,7 +4,6 @@ import classes from "./OrderBook.module.css";
 import { OrderBookAll } from "./OrderBookAll";
 import { StocksTable } from "./StocksTable/StocksTable";
 
-const categories = ["All", "Asks", "Bids"] as const;
 const header = ["Price USD", "Qty BTC"];
 const rows = [
   {
@@ -67,8 +66,8 @@ const rows = [
 export const OrderBookMobile = ({ activeTab, activeCategory }: { activeTab: string; activeCategory: string }) => {
   return activeTab === "Chart" ? (
     <div className={clsx(classes.flexSpaceBetween, classes.rowDirected)}>
-      {(activeCategory === "All" || activeCategory === "Bids") && <StocksTable header={header} rows={rows} isPositive={true} />}
-      {(activeCategory === "All" || activeCategory === "Asks") && <StocksTable header={header} rows={rows} isPositive={false} />}
+      {(activeCategory === "All" || activeCategory === "Bids") && <StocksTable {...{ header, rows, activeCategory }} isPositive={true} />}
+      {(activeCategory === "All" || activeCategory === "Asks") && <StocksTable {...{ header, rows, activeCategory }} isPositive={false} />}
     </div>
   ) : (
     <OrderBookAll {...{ header, rows }} />

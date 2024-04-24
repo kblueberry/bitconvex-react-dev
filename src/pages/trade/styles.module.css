@@ -40,3 +40,10 @@
   position: absolute;
 }
 
+@media screen and (max-width: 600px) {
+  td {
+    p {
+      @mixin text-5;
+    }
+  }
+}

@@ -1,8 +1,9 @@
 import { Table } from "@mantine/core";
+import clsx from "clsx";
 
 import classes from "../OrderBook.module.css";
 
-export const Bids = ({ rows, isPositive }: { rows: Array<any>; isPositive: boolean }) => {
+export const Bids = ({ rows, isPositive, activeCategory }: { rows: Array<any>; isPositive: boolean; activeCategory?: string }) => {
   return (
     <Table.Tbody className={classes.tableBody}>
       {rows.map((row) => (
@@ -13,11 +14,13 @@ export const Bids = ({ rows, isPositive }: { rows: Array<any>; isPositive: boole
             } ${100 - row.fill}%)`,
           }}
           key={row.id}
-          className={isPositive ? classes.positive : classes.negative}
+          className={
+            isPositive ? classes.positive : clsx(classes.negative, { [classes.orderRowReversed]: !!activeCategory && activeCategory === "All" })
+          }
         >
           {row.cells.map((td) => (
             <Table.Td key={td}>
-              <p>{td}</p>
+              <p className="orderCell">{td}</p>
             </Table.Td>
           ))}
         </Table.Tr>
