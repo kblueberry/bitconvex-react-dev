@@ -114,3 +114,16 @@
     width: 50%;
   }
 }
+
+.flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.columnDirected {
+  flex-direction: column;
+}
+
+.rowDirected {
+  flex-direction: row;
+}
