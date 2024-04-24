@@ -160,7 +160,7 @@ export const OrderBook = () => {
             </button>
           ))}
         </div>
-        {isMobile ? <OrderBookMobile {...{ activeCategory }} /> : <OrderBookDesktop {...{ activeCategory }} />}
+        {isMobile ? <OrderBookMobile {...{ activeCategory }} activeTab="Chart" /> : <OrderBookDesktop {...{ activeCategory }} />}
       </Stack>
     </Container>
   );
