@@ -105,6 +105,15 @@
   }
 }
 
+.tradeOrderBookInfo {
+  padding: 20px 0 20px 10px;
+  font-family: "ProximaNova";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.2px;
+  color: rgb(14, 203, 123);
+}
+
 .tabsWrapper {
   justify-content: space-between;
   align-items: center;

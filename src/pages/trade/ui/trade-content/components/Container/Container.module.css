@@ -9,3 +9,9 @@
     padding: 32px 20px !important;
   }
 }
+
+.payment {
+  @media screen and (max-width: 600px) {
+    width: 260px;
+  }
+}
