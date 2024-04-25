@@ -59,7 +59,7 @@
       color: rgb(14, 203, 123);
     }
     &.negative td:first-child {
-      color: rgb(228, 34, 34);
+      color: rgba(244, 74, 74, 1);
     }
     &:last-child td {
       border-bottom: none;
@@ -103,7 +103,7 @@
     background-color: rgb(14, 203, 123);
   }
   &.negative {
-    background-color: rgb(228, 34, 34);
+    background-color: rgba(244, 74, 74, 1);
   }
 }
 
@@ -146,4 +146,16 @@
 }
 
 @media screen and (max-width: 600px) {
+  .tableBody {
+    & tr {
+      &.positive td:nth-child(2) {
+        background-color: rgba(90, 222, 167, 1);
+        color: white;
+      }
+      &.negative td:nth-child(2) {
+        background-color: rgba(244, 74, 74, 1);
+        color: white;
+      }
+    }
+  }
 }
