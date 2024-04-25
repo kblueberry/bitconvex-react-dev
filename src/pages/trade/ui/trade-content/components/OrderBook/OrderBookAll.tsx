@@ -4,16 +4,16 @@ import clsx from "clsx";
 import { Container } from "../Container/Container";
 import classes from "./OrderBook.module.css";
 import { OrderRows } from "./OrderBook.types";
-import { StocksTable } from "./StocksTable/StocksTable";
+import { Stocks } from "./Stocks/Stocks";
 
 export const OrderBookAll = ({ header, rows }: { header: Array<string>; rows: OrderRows }) => {
   return (
     <Stack>
       <Container>
         <div className={clsx(classes.flexSpaceBetween, classes.columnDirected)}>
-          <StocksTable header={header} rows={rows} isPositive={true} />
+          <Stocks header={header} rows={rows} isPositive={true} />
           <Text className={classes.tradeOrderBookInfo}>38,555.19</Text>
-          <StocksTable header={header} rows={rows} isPositive={false} />
+          <Stocks header={header} rows={rows} isPositive={false} />
         </div>
       </Container>
     </Stack>

@@ -2,9 +2,9 @@ import { Table } from "@mantine/core";
 
 import { SortIcon } from "@/shared/ui/icon/SortIcon";
 
-import { Orders } from "../Bids/Bids";
 import classes from "../OrderBook.module.css";
 import { OrderRows } from "../OrderBook.types";
+import { Orders } from "../Orders/Orders";
 
 interface TableProps {
   header: Array<string>;
@@ -14,7 +14,7 @@ interface TableProps {
   activeCategory?: string;
 }
 
-export const StocksTable = ({ header, className, rows, isPositive, activeCategory }: TableProps) => {
+export const Stocks = ({ header, className, rows, isPositive, activeCategory }: TableProps) => {
   return (
     <Table>
       <Table.Thead className={classes.tableTHead}>
@@ -29,7 +29,7 @@ export const StocksTable = ({ header, className, rows, isPositive, activeCategor
           ))}
         </Table.Tr>
       </Table.Thead>
-      <Orders {...{ rows, isPositive, activeCategory }} />
+      <Orders {...{ rows, isPositive }} />
     </Table>
   );
 };

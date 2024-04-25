@@ -1,5 +1,6 @@
 export const categories = ["All", "Asks", "Bids"] as const;
 export const header = ["Price USD", "Qty BTC", "Total USD"];
+export const headerMobile = ["Price USD", "Qty BTC"];
 export const rows = [
   {
     id: 1,
