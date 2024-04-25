@@ -4,20 +4,17 @@ import { SortIcon } from "@/shared/ui/icon/SortIcon";
 
 import { Bids } from "../Bids/Bids";
 import classes from "../OrderBook.module.css";
+import { OrderRows } from "../OrderBook.types";
 
-export const StocksTable = ({
-  header,
-  className,
-  rows,
-  isPositive,
-  activeCategory,
-}: {
+interface TableProps {
   header: Array<string>;
   className?: string;
-  rows: Array<any>;
+  rows: OrderRows;
   isPositive: boolean;
   activeCategory?: string;
-}) => {
+}
+
+export const StocksTable = ({ header, className, rows, isPositive, activeCategory }: TableProps) => {
   return (
     <Table>
       <Table.Thead className={classes.tableTHead}>

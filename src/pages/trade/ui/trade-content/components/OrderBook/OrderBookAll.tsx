@@ -3,9 +3,10 @@ import clsx from "clsx";
 
 import { Container } from "../Container/Container";
 import classes from "./OrderBook.module.css";
+import { OrderRows } from "./OrderBook.types";
 import { StocksTable } from "./StocksTable/StocksTable";
 
-export const OrderBookAll = ({ header, rows }: { header: Array<string>; rows: Array<any> }) => {
+export const OrderBookAll = ({ header, rows }: { header: Array<string>; rows: OrderRows }) => {
   return (
     <Stack>
       <Container>

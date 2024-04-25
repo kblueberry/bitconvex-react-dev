@@ -2,8 +2,15 @@ import { Table } from "@mantine/core";
 import clsx from "clsx";
 
 import classes from "../OrderBook.module.css";
+import { OrderRows } from "../OrderBook.types";
 
-export const Bids = ({ rows, isPositive, activeCategory }: { rows: Array<any>; isPositive: boolean; activeCategory?: string }) => {
+interface BidsProps {
+  rows: OrderRows;
+  isPositive: boolean;
+  activeCategory: string;
+}
+
+export const Bids = ({ rows, isPositive, activeCategory }: BidsProps) => {
   return (
     <Table.Tbody className={classes.tableBody}>
       {rows.map((row) => (
