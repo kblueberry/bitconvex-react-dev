@@ -8,7 +8,6 @@ import { MarketStats } from "./components/MarketStats/MarketStats";
 import { MarketTrades } from "./components/MarketTrades/MarketTrades";
 import { OrderBook } from "./components/OrderBook/OrderBook";
 import { OrderBookMobile } from "./components/OrderBook/OrderBookMobile";
-import { StocksTable } from "./components/OrderBook/StocksTable/StocksTable";
 import { Payment } from "./components/Payment/Payment";
 import { TradeChart } from "./components/TradeChart/TradeChart";
 import { TradeHistory } from "./components/TradeHistory/TradeHistory";

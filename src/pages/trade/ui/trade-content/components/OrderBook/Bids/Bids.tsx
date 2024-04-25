@@ -18,9 +18,9 @@ export const Bids = ({ rows, isPositive, activeCategory }: { rows: Array<any>; i
             isPositive ? classes.positive : clsx(classes.negative, { [classes.orderRowReversed]: !!activeCategory && activeCategory === "All" })
           }
         >
-          {row.cells.map((td) => (
-            <Table.Td key={td}>
-              <p className="orderCell">{td}</p>
+          {row.cells.map((td, index) => (
+            <Table.Td key={td} hidden={index === 2}>
+              <p>{td}</p>
             </Table.Td>
           ))}
         </Table.Tr>
