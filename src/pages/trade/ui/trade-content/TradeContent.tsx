@@ -9,6 +9,7 @@ import { MarketTrades } from "./components/MarketTrades/MarketTrades";
 import { OrderBook } from "./components/OrderBook/OrderBook";
 import { OrderBookMobile } from "./components/OrderBook/OrderBookMobile";
 import { Payment } from "./components/Payment/Payment";
+import { TradeActions } from "./components/TradeActions";
 import { TradeChart } from "./components/TradeChart/TradeChart";
 import { TradeHistory } from "./components/TradeHistory/TradeHistory";
 
@@ -43,6 +44,7 @@ export const TradeContent = () => {
               <TradeHistory />
             </>
           )}
+          <TradeActions />
         </Group>
       ) : (
         <>

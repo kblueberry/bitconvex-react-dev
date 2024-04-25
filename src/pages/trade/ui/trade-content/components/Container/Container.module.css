@@ -21,6 +21,16 @@
     .container {
       padding: 10px 10px 0 !important;
       width: 78%;
+
+      .tableBody {
+        & tr {
+          & td {
+            .tableCellValue {
+              font-size: 11px;
+            }
+          }
+        }
+      }
     }
   }
 }
