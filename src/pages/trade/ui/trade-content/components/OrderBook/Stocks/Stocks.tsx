@@ -16,7 +16,7 @@ interface TableProps {
 
 export const Stocks = ({ header, className, rows, isPositive, activeCategory }: TableProps) => {
   return (
-    <Table>
+    <Table className={className}>
       <Table.Thead className={classes.tableTHead}>
         <Table.Tr className={activeCategory === "All" && isPositive ? "" : classes.orderRowReversed}>
           {header.map((head) => (

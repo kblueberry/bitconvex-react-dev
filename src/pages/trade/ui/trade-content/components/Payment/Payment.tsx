@@ -15,8 +15,8 @@ const tabs = [
 ];
 export const Payment = () => {
   return (
-    <Stack>
-      <Container className={containerClasses.payment}>
+    <Stack className={containerClasses.payment}>
+      <Container>
         {window.innerWidth < 600 && (
           <>
             <Group gap={8} className={classes.tradeChartWrapper}>

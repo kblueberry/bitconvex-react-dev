@@ -16,6 +16,6 @@ export const OrderBookMobile = ({ activeTab, activeCategory }: { activeTab: stri
       )}
     </div>
   ) : (
-    <OrderBookAll {...{ header, rows }} />
+    <OrderBookAll {...{ rows }} header={headerMobile} />
   );
 };

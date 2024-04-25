@@ -4,14 +4,23 @@
   background-color: var(--color-black);
   width: 100%;
   height: 100%;
-
-  @media screen and (max-width: 600px) {
-    padding: 32px 20px !important;
-  }
 }
 
-.payment {
-  @media screen and (max-width: 600px) {
-    width: 260px;
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 32px 20px !important;
+  }
+
+  .payment {
+    width: 47%;
+  }
+
+  .ordersAll {
+    margin-left: 10px;
+
+    .container {
+      padding: 10px 10px 0 !important;
+      width: 78%;
+    }
   }
 }
