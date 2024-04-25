@@ -10,7 +10,7 @@ interface BidsProps {
   activeCategory: string;
 }
 
-export const Bids = ({ rows, isPositive, activeCategory }: BidsProps) => {
+export const Orders = ({ rows, isPositive, activeCategory }: BidsProps) => {
   return (
     <Table.Tbody className={classes.tableBody}>
       {rows.map((row) => (
@@ -26,7 +26,7 @@ export const Bids = ({ rows, isPositive, activeCategory }: BidsProps) => {
               hidden={index === 2}
               className={clsx(classes.tableCell, isPositive ? classes.tableCellPositive : classes.tableCellNegative)}
             >
-              <p>{td}</p>
+              <p className={classes.tableCellValue}>{td}</p>
             </Table.Td>
           ))}
         </Table.Tr>

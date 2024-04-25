@@ -1,5 +1,3 @@
-@import url("../../../../../../app//styles//mixin.css");
-
 .orderBookTitle {
   color: white;
   font-size: 20px;
@@ -152,9 +150,20 @@
         background-color: rgba(90, 222, 167, 1);
         color: white;
       }
+
       &.negative td:nth-child(2) {
         background-color: rgba(244, 74, 74, 1);
         color: white;
+      }
+
+      & td {
+        height: 30px;
+        padding: 4px;
+
+        .tableCellValue {
+          font-size: 14px !important;
+          line-height: 17px;
+        }
       }
     }
   }

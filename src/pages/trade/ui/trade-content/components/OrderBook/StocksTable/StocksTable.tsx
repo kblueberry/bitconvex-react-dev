@@ -2,7 +2,7 @@ import { Table } from "@mantine/core";
 
 import { SortIcon } from "@/shared/ui/icon/SortIcon";
 
-import { Bids } from "../Bids/Bids";
+import { Orders } from "../Bids/Bids";
 import classes from "../OrderBook.module.css";
 import { OrderRows } from "../OrderBook.types";
 
@@ -29,7 +29,7 @@ export const StocksTable = ({ header, className, rows, isPositive, activeCategor
           ))}
         </Table.Tr>
       </Table.Thead>
-      <Bids {...{ rows, isPositive, activeCategory }} />
+      <Orders {...{ rows, isPositive, activeCategory }} />
     </Table>
   );
 };
