@@ -1,4 +1,5 @@
 import { Table } from "@mantine/core";
+import clsx from "clsx";
 
 import { SortIcon } from "@/shared/ui/icon/SortIcon";
 
@@ -8,15 +9,14 @@ import { Orders } from "../Orders/Orders";
 
 interface TableProps {
   header: Array<string>;
-  className?: string;
   rows: OrderRows;
   isPositive: boolean;
   activeCategory?: string;
 }
 
-export const Stocks = ({ header, className, rows, isPositive, activeCategory }: TableProps) => {
+export const Stocks = ({ header, rows, isPositive, activeCategory }: TableProps) => {
   return (
-    <Table className={className}>
+    <Table className={clsx({ [classes.stocksTableReversed]: activeCategory !== "All" || !isPositive })}>
       <Table.Thead className={classes.tableTHead}>
         <Table.Tr className={activeCategory === "All" && isPositive ? "" : classes.orderRowReversed}>
           {header.map((head) => (

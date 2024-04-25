@@ -139,7 +139,6 @@
 
 .orderRowReversed {
   display: flex;
-  /* flex-direction: row-reverse; */
   justify-content: space-between;
 }
 
@@ -159,11 +158,30 @@
 
       & td {
         height: 30px;
-        padding: 4px;
+        padding: 4px 2px;
 
         .tableCellValue {
-          font-size: 14px !important;
+          font-size: 0.8em !important;
           line-height: 17px;
+        }
+      }
+    }
+  }
+
+  .stocksTableReversed {
+    .tableBody {
+      & tr {
+        display: flex;
+        justify-content: space-between;
+
+        & td {
+          &:nth-child(1) {
+            order: 2;
+          }
+
+          &:nth-child(2) {
+            order: 1;
+          }
         }
       }
     }
