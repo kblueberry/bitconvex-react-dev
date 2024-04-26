@@ -29,7 +29,7 @@ export const Stocks = ({ header, rows, isPositive, activeCategory }: TableProps)
           ))}
         </Table.Tr>
       </Table.Thead>
-      <Orders {...{ rows, isPositive }} />
+      <Orders {...{ rows, isPositive }} cellsOrderChanged={activeCategory !== "All" || !isPositive} />
     </Table>
   );
 };

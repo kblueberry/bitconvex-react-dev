@@ -137,23 +137,44 @@
   flex-direction: row;
 }
 
-.orderRowReversed {
+/* .orderRowReversed {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 @media screen and (max-width: 1024px) {
   .tableBody {
     & tr {
       margin: 5px;
-      &.positive td:nth-child(2) {
-        background-color: rgba(90, 222, 167, 1);
-        color: white;
+
+      /* &.positive, */
+      /* &.negative { */
+      /* display: flex; */
+      /* justify-content: space-between; */
+      /* width: 100%; */
+
+      /* display: table-row; */
+      /* } */
+      &.positive td {
+        &:nth-child(3) {
+          display: none;
+        }
+
+        &:nth-child(2) {
+          background-color: rgba(90, 222, 167, 1);
+          color: white;
+        }
       }
 
-      &.negative td:nth-child(2) {
-        background-color: rgba(244, 74, 74, 1);
-        color: white;
+      &.negative td {
+        &:nth-child(2) {
+          background-color: rgba(244, 74, 74, 1);
+          color: white;
+        }
+
+        &:nth-child(1) {
+          display: none;
+        }
       }
 
       & td {
@@ -171,9 +192,6 @@
   .stocksTableReversed {
     .tableBody {
       & tr {
-        display: flex;
-        justify-content: space-between;
-
         & td {
           &:nth-child(1) {
             order: 2;
