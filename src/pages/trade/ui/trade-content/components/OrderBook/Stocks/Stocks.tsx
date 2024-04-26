@@ -1,5 +1,4 @@
 import { Table } from "@mantine/core";
-import clsx from "clsx";
 
 import { SortIcon } from "@/shared/ui/icon/SortIcon";
 
@@ -14,7 +13,7 @@ interface TableProps {
   cellsOrderChanged: boolean;
 }
 
-// TODO change order of rows on Bids tab, refactor .stocksTableReversed
+// TODO change order of rows on Bids t∏ab, refactor .stocksTableReversed
 export const Stocks = ({ header, rows, isPositive, cellsOrderChanged }: TableProps) => {
   return (
     <Table>

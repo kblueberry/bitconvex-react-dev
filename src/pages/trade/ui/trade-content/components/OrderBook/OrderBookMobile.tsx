@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { headerMobile, rows, rowsMobile } from "./OrderBook.constants";
+import { headerMobile, rowsMobile } from "./OrderBook.constants";
 import classes from "./OrderBook.module.css";
 import { OrderBookAll } from "./OrderBookAll";
 import { Stocks } from "./Stocks/Stocks";
