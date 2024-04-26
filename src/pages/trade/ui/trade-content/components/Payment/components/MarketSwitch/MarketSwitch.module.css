@@ -64,3 +64,19 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .text {
+    font-size: 12px;
+  }
+
+  .button {
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .button {
+    padding: 12px 6px;
+  }
+}
