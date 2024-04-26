@@ -186,4 +186,16 @@
       }
     }
   }
+
+  .ordersAll {
+    .tableBody {
+      & tr {
+        & td {
+          .tableCellValue {
+            font-size: 0.6em;
+          }
+        }
+      }
+    }
+  }
 }

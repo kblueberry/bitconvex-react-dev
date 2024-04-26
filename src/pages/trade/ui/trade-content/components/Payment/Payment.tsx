@@ -1,3 +1,4 @@
+import { useResize } from "@/hooks/useResize";
 import { Group, Stack, Text } from "@mantine/core";
 
 import { Tabs } from "@/shared/ui/tabs";
@@ -14,10 +15,12 @@ const tabs = [
   { id: "sell", title: "Sell", content: <SellTab /> },
 ];
 export const Payment = () => {
+  const { isAdaptive } = useResize(1024);
+
   return (
     <Stack className={containerClasses.payment}>
       <Container>
-        {window.innerWidth < 600 && (
+        {isAdaptive && (
           <>
             <Group gap={8} className={classes.tradeChartWrapper}>
               <Text className={classes.tradeChartTitle}>Bitcoin/USDT Chart</Text>

@@ -1,6 +1,7 @@
+import { useResize } from "@/hooks/useResize";
 import { Stack, Text } from "@mantine/core";
 import clsx from "clsx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { Container } from "../Container/Container";
 import { categories } from "./OrderBook.constants";
@@ -10,9 +11,7 @@ import { OrderBookMobile } from "./OrderBookMobile";
 
 export const OrderBook = () => {
   const [activeCategory, setActiveCategory] = useState<(typeof categories)[number]>(categories[0]);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-
-  useEffect(() => setIsMobile(window.innerWidth < 600), []);
+  const { isAdaptive } = useResize(1024);
 
   return (
     <Container style={{ height: "100%" }}>
@@ -29,7 +28,7 @@ export const OrderBook = () => {
             </button>
           ))}
         </div>
-        {isMobile ? <OrderBookMobile {...{ activeCategory }} activeTab="Chart" /> : <OrderBookDesktop {...{ activeCategory }} />}
+        {isAdaptive ? <OrderBookMobile {...{ activeCategory }} activeTab="Chart" /> : <OrderBookDesktop {...{ activeCategory }} />}
       </Stack>
     </Container>
   );

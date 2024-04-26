@@ -2,3 +2,8 @@
   align-self: stretch;
   max-height: 1134px;
 }
+
+.tradeTabContainer {
+  display: flex;
+  justify-content: flex-start;
+}

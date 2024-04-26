@@ -1,5 +1,6 @@
+import { useResize } from "@/hooks/useResize";
 import { Group, Stack } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import classes from "./TradeContent.module.css";
 import { ButtonTabs } from "./components/ButtonTabs/ui";
@@ -17,15 +18,11 @@ export const TradeContent = () => {
   const categories = ["Chart", "Trade"];
 
   const [activeCategory, setActiveCategory] = useState<(typeof categories)[number]>(categories[0]);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-
-  useEffect(() => {
-    window.innerWidth < 600 ? setIsMobile(true) : setIsMobile(false);
-  }, [isMobile]);
+  const { isAdaptive } = useResize(1024);
 
   return (
     <Stack gap={20} py={64}>
-      {isMobile ? (
+      {isAdaptive ? (
         <Group>
           <ButtonTabs {...{ categories, activeCategory, setActiveCategory }} />
           {activeCategory === "Chart" && (
@@ -37,7 +34,7 @@ export const TradeContent = () => {
           )}
           {activeCategory === "Trade" && (
             <>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div className={classes.tradeTabContainer}>
                 <Payment />
                 <OrderBookMobile activeTab="Trade" activeCategory="All" />
               </div>

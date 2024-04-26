@@ -20,13 +20,13 @@
 
     .container {
       padding: 10px 10px 0 !important;
-      width: 78%;
+      width: 80%;
 
       .tableBody {
         & tr {
           & td {
             .tableCellValue {
-              font-size: 11px;
+              font-size: 0.6em;
             }
           }
         }
