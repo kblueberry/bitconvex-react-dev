@@ -14,6 +14,7 @@ interface TableProps {
   activeCategory?: string;
 }
 
+// TODO change order of rows on Bids tab, refactor .stocksTableReversed
 export const Stocks = ({ header, rows, isPositive, activeCategory }: TableProps) => {
   return (
     <Table className={clsx({ [classes.stocksTableReversed]: activeCategory !== "All" || !isPositive })}>
