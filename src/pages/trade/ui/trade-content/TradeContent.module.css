@@ -8,3 +8,10 @@
   justify-content: flex-start;
   width: 100%;
 }
+
+@media screen and (max-width: 425px) {
+  .tradeTabContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
