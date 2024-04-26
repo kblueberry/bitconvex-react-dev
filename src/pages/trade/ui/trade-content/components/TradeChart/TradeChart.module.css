@@ -1,9 +1,5 @@
 .chartContainer {
   height: 610px;
-
-  @media screen and (max-width: 600px) {
-    height: 541px;
-  }
 }
 .tradeChartWrapper {
   flex-wrap: nowrap;
@@ -12,10 +8,6 @@
   color: white;
   font-size: 32px;
   font-weight: 700;
-
-  @media screen and (max-width: 600px) {
-    font-size: 21px;
-  }
 }
 
 .periodButton {
@@ -34,5 +26,15 @@
   &.active {
     border-color: var(--color-blue);
     color: var(--color-blue);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .tradeChartTitle {
+    font-size: 21px;
+  }
+
+  .chartContainer {
+    height: 541px;
   }
 }
