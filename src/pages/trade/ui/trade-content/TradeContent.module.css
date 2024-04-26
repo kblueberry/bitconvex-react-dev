@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1024px) {
   .tradeTabContainer {
     flex-direction: column;
     gap: 20px;
