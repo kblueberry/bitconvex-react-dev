@@ -176,19 +176,9 @@
           display: none;
         }
       }
-
-      & td {
-        height: 30px;
-        padding: 4px 2px;
-
-        .tableCellValue {
-          font-size: 0.8em !important;
-          line-height: 17px;
-        }
-      }
     }
   }
-
+  /* 
   .stocksTableReversed {
     .tableBody {
       & tr {
@@ -203,7 +193,7 @@
         }
       }
     }
-  }
+  } */
 
   .ordersAll {
     .tableBody {
@@ -214,6 +204,15 @@
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  & td {
+    .tableCellValue {
+      font-size: 0.8em !important;
+      line-height: 17px;
     }
   }
 }
