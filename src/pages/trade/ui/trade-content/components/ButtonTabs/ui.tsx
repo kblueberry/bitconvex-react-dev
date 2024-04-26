@@ -1,5 +1,6 @@
 import clsx from "clsx";
 
+import { Container } from "../Container/Container";
 import classes from "../OrderBook/OrderBook.module.css";
 
 export const ButtonTabs = ({
@@ -12,7 +13,7 @@ export const ButtonTabs = ({
   setActiveCategory: (category: string) => void;
 }) => {
   return (
-    <div className={clsx(classes.orderBookButtonsWrapper, classes.tabsWrapper)}>
+    <Container className={clsx(classes.orderBookButtonsWrapper, classes.tabsWrapper)}>
       {categories.map((cat) => (
         <button
           key={cat}
@@ -22,6 +23,6 @@ export const ButtonTabs = ({
           {cat}
         </button>
       ))}
-    </div>
+    </Container>
   );
 };
