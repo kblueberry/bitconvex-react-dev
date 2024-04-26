@@ -16,11 +16,10 @@
   }
 
   .ordersAll {
-    margin-left: 10px;
     flex: 1 1 25%;
 
     .container {
-      padding: 10px 10px 0 !important;
+      padding: 15px 20px !important;
 
       .tableBody {
         & tr {

@@ -19,6 +19,6 @@ export const OrderBookMobile = ({ activeTab, activeCategory }: { activeTab: stri
       {activeCategory === "Asks" && <StocksBidsOrAsks header={[...headerMobile].reverse()} rows={rowsMobile} isPositive={false} />}
     </div>
   ) : (
-    <OrderBookAll {...{ rows }} header={headerMobile} />
+    <OrderBookAll header={headerMobile} />
   );
 };
