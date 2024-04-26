@@ -63,3 +63,18 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .table {
+    th {
+      font-size: 0.8em;
+    }
+
+    tbody {
+      td {
+        font-size: 1em !important;
+        line-height: 16.8px;
+      }
+    }
+  }
+}

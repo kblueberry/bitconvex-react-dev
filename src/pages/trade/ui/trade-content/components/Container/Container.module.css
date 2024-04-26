@@ -12,15 +12,15 @@
   }
 
   .payment {
-    width: 47%;
+    flex: 1 1 75%;
   }
 
   .ordersAll {
     margin-left: 10px;
+    flex: 1 1 25%;
 
     .container {
       padding: 10px 10px 0 !important;
-      width: 80%;
 
       .tableBody {
         & tr {
