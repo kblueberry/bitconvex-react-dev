@@ -1,4 +1,5 @@
 @import url("@/app/styles/mixin.css");
+
 .coinsContainer {
   height: 383px;
 }
@@ -33,5 +34,18 @@
     path {
       fill: var(--color-blue);
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .coinsContainer {
+    height: 40em;
+  }
+
+  .dropdown {
+    left: 13px !important;
+    top: 13% !important;
+    width: 95% !important;
+    box-shadow: 10px 54px 0px 60px rgba(NaN, 12, 13, 0.32);
   }
 }

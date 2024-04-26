@@ -11,7 +11,7 @@ export const OrderBookMobile = ({ activeTab, activeCategory }: { activeTab: stri
     <div className={clsx(classes.flexSpaceBetween, classes.rowDirected)}>
       {activeCategory === "All" && (
         <>
-          <Stocks {...{ activeCategory }} rows={rowsMobile} header={headerMobile} isPositive={true} />
+          <Stocks {...{ activeCategory }} rows={rowsMobile} header={headerMobile} isPositive={true} cellsOrderChanged={false} />
           <StocksBidsOrAsks header={[...headerMobile].reverse()} rows={rowsMobile} isPositive={false} />
         </>
       )}

@@ -8,13 +8,15 @@ import classes from "./OrderBook.module.css";
 import { Stocks } from "./Stocks/Stocks";
 
 export const OrderBookAll = ({ header }: { header: Array<string> }) => {
+  console.log("rows mobile", rowsMobile);
+
   return (
     <Stack className={containerClasses.ordersAll}>
       <Container>
         <div className={clsx(classes.flexSpaceBetween, classes.columnDirected)}>
-          <Stocks header={header} rows={[...rowsMobile].slice(0, 4).reverse()} isPositive={true} />
+          <Stocks header={header} rows={[...rowsMobile].slice(0, 4)} isPositive={true} cellsOrderChanged={false} />
           <Text className={classes.tradeOrderBookInfo}>38,555.19</Text>
-          <Stocks header={header} rows={[...rowsMobile].slice(0, 4)} isPositive={false} />
+          <Stocks header={header} rows={[...rowsMobile].slice(0, 4)} isPositive={false} cellsOrderChanged={true} />
         </div>
       </Container>
     </Stack>

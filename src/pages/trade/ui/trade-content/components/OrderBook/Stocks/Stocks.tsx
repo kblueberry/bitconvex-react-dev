@@ -11,11 +11,11 @@ interface TableProps {
   header: Array<string>;
   rows: OrderRows;
   isPositive: boolean;
-  activeCategory?: string;
+  cellsOrderChanged: boolean;
 }
 
 // TODO change order of rows on Bids tab, refactor .stocksTableReversed
-export const Stocks = ({ header, rows, isPositive, activeCategory }: TableProps) => {
+export const Stocks = ({ header, rows, isPositive, cellsOrderChanged }: TableProps) => {
   return (
     <Table>
       <Table.Thead className={classes.tableTHead}>
@@ -30,7 +30,7 @@ export const Stocks = ({ header, rows, isPositive, activeCategory }: TableProps)
           ))}
         </Table.Tr>
       </Table.Thead>
-      <Orders {...{ rows, isPositive }} cellsOrderChanged={activeCategory !== "All" || !isPositive} />
+      <Orders {...{ rows, isPositive, cellsOrderChanged }} className={cellsOrderChanged && !isPositive ? "tradeOrdersAsksTable" : ""} />
     </Table>
   );
 };

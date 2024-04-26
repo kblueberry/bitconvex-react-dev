@@ -9,9 +9,10 @@ interface BidsProps {
   rows: OrderRows;
   isPositive: boolean;
   cellsOrderChanged: boolean;
+  className?: string;
 }
 
-export const Orders = ({ rows, isPositive, cellsOrderChanged }: BidsProps) => {
+export const Orders = ({ rows, isPositive, cellsOrderChanged, className = "" }: BidsProps) => {
   console.log("cells changed", cellsOrderChanged, "original", rows, "and cells", transformAsksAndBidsRows(rows));
 
   return (
@@ -19,7 +20,11 @@ export const Orders = ({ rows, isPositive, cellsOrderChanged }: BidsProps) => {
       {rows.map((row) => (
         <Table.Tr
           key={row.id}
-          className={clsx(isPositive ? classes.positive : classes.negative, cellsOrderChanged ? classes.stocksRowReversed : classes.stocksRow)}
+          className={clsx(
+            isPositive ? classes.positive : classes.negative,
+            cellsOrderChanged ? classes.stocksRowReversed : classes.stocksRow,
+            className,
+          )}
         >
           {row.cells.map((td) => (
             <Table.Td key={td} className={classes.tableCell}>

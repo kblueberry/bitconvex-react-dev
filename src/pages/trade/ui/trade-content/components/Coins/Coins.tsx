@@ -1,4 +1,5 @@
 import { Button, Popover, Stack, TextInput } from "@mantine/core";
+import clsx from "clsx";
 
 import { ArrowDown, SearchIcon } from "@/shared/ui";
 import { Tabs } from "@/shared/ui/tabs";
@@ -9,13 +10,13 @@ import classes from "./Coins.module.css";
 
 export const Coins = () => {
   return (
-    <Popover keepMounted>
+    <Popover keepMounted position="top-start" offset={{ mainAxis: 1, crossAxis: -23 }}>
       <Popover.Target>
         <Button bg={"transparent"} px={8} className={classes.target}>
           <ArrowDown />
         </Button>
       </Popover.Target>
-      <Popover.Dropdown className={classes.dropdown}>
+      <Popover.Dropdown className={clsx(classes.dropdown, classes.searchPopover)}>
         <div className={classes.coinsContainer}>
           <Container>
             <Stack gap={32} h={"100%"}>
