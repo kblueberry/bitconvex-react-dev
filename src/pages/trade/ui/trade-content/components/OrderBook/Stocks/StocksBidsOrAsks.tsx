@@ -1,5 +1,5 @@
+import { transformAsksAndBidsRows } from "@/helpers/transformAsksAndBidsRows";
 import { Table } from "@mantine/core";
-import clsx from "clsx";
 
 import { SortIcon } from "@/shared/ui/icon/SortIcon";
 
@@ -11,11 +11,10 @@ interface TableProps {
   header: Array<string>;
   rows: OrderRows;
   isPositive: boolean;
-  activeCategory?: string;
 }
 
 // TODO change order of rows on Bids tab, refactor .stocksTableReversed
-export const Stocks = ({ header, rows, isPositive, activeCategory }: TableProps) => {
+export const StocksBidsOrAsks = ({ header, rows, isPositive }: TableProps) => {
   return (
     <Table>
       <Table.Thead className={classes.tableTHead}>
@@ -30,7 +29,7 @@ export const Stocks = ({ header, rows, isPositive, activeCategory }: TableProps)
           ))}
         </Table.Tr>
       </Table.Thead>
-      <Orders {...{ rows, isPositive }} cellsOrderChanged={activeCategory !== "All" || !isPositive} />
+      <Orders {...{ isPositive }} rows={transformAsksAndBidsRows(rows)} cellsOrderChanged={true} />
     </Table>
   );
 };

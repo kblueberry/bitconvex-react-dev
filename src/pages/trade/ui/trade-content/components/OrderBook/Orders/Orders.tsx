@@ -11,13 +11,13 @@ interface BidsProps {
   cellsOrderChanged: boolean;
 }
 
-export const Orders = ({ rows, isPositive, cellsOrderChanged: cellsOrderChanged }: BidsProps) => {
+export const Orders = ({ rows, isPositive, cellsOrderChanged }: BidsProps) => {
   console.log("cells changed", cellsOrderChanged, "original", rows, "and cells", transformAsksAndBidsRows(rows));
 
   return (
     <Table.Tbody className={classes.tableBody}>
-      {transformAsksAndBidsRows(rows, cellsOrderChanged).map((row) => (
-        <Table.Tr key={row.id} className={isPositive ? classes.positive : clsx(classes.negative, classes.orderRowReversed)}>
+      {rows.map((row) => (
+        <Table.Tr key={row.id} className={clsx(isPositive ? classes.positive : classes.negative, classes.stocksRowReversed)}>
           {row.cells.map((td) => (
             <Table.Td key={td} className={classes.tableCell}>
               <p className={classes.tableCellValue}>{td}</p>
