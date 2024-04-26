@@ -17,7 +17,10 @@ export const Orders = ({ rows, isPositive, cellsOrderChanged }: BidsProps) => {
   return (
     <Table.Tbody className={classes.tableBody}>
       {rows.map((row) => (
-        <Table.Tr key={row.id} className={clsx(isPositive ? classes.positive : classes.negative, classes.stocksRowReversed)}>
+        <Table.Tr
+          key={row.id}
+          className={clsx(isPositive ? classes.positive : classes.negative, cellsOrderChanged ? classes.stocksRowReversed : classes.stocksRow)}
+        >
           {row.cells.map((td) => (
             <Table.Td key={td} className={classes.tableCell}>
               <p className={classes.tableCellValue}>{td}</p>

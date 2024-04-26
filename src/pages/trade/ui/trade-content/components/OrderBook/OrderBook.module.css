@@ -142,29 +142,43 @@
     & tr {
       margin: 5px;
 
-      .stocksRowReversed {
-        &.positive td:nth-child(1) {
-          background-color: rgba(90, 222, 167, 1);
-          color: white;
+      &.positive {
+        &.stocksRowReversed td {
+          &:nth-child(1) {
+            background-color: rgba(90, 222, 167, 1);
+            color: white;
+          }
+
+          &:nth-child(2) {
+            background: transparent;
+          }
         }
 
-        &.negative td:nth-child(1) {
-          background-color: rgba(244, 74, 74, 1);
-          color: white;
+        &.stocksRow td {
+          &:nth-child(2) {
+            background-color: rgba(90, 222, 167, 1);
+            color: white;
+          }
         }
       }
 
-      &.positive td {
-        &:nth-child(2) {
-          background-color: rgba(90, 222, 167, 1);
-          color: white;
-        }
-      }
+      &.negative {
+        &.stocksRowReversed td {
+          &:nth-child(1) {
+            background-color: rgba(244, 74, 74, 1);
+            color: white;
+          }
 
-      &.negative td {
-        &:nth-child(1) {
-          background-color: rgba(244, 74, 74, 1);
-          color: white;
+          &:nth-child(2) {
+            background: transparent;
+          }
+        }
+
+        &.stocksRow td {
+          &:nth-child(1) {
+            background-color: rgba(244, 74, 74, 1);
+            color: white;
+          }
         }
       }
     }
