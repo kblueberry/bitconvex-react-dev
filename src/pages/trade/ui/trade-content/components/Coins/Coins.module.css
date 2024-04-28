@@ -58,12 +58,13 @@
 
 @media screen and (max-width: 1024px) {
   .coinsContainer {
-    height: 40em;
+    height: 500px;
   }
 
   .dropdown {
     left: 13px !important;
     top: 13% !important;
     width: 95% !important;
+    box-shadow: 10px 111px 138px 62px rgba(12, 13, 16, 0.8);
   }
 }
