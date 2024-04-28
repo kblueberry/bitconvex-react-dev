@@ -1,4 +1,4 @@
-import { Group, Image, Table } from "@mantine/core";
+import { CloseButton, Group, Table } from "@mantine/core";
 import clsx from "clsx";
 import { useState } from "react";
 
@@ -191,7 +191,7 @@ export const OrdersTabMobile = () => {
             ))}
             <Table.Td>
               <button>
-                <Image src={`${import.meta.env.BASE_URL}assets/buttonCancel.svg`}></Image>
+                <CloseButton className={classes.closeButton} />
               </button>
             </Table.Td>
           </Table.Tr>
