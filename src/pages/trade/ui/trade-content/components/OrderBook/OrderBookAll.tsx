@@ -8,8 +8,6 @@ import classes from "./OrderBook.module.css";
 import { Stocks } from "./Stocks/Stocks";
 
 export const OrderBookAll = ({ header }: { header: Array<string> }) => {
-  console.log("rows mobile", rowsMobile);
-
   return (
     <Stack className={containerClasses.ordersAll}>
       <Container>

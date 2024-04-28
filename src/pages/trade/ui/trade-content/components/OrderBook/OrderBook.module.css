@@ -179,9 +179,9 @@
         }
 
         &.tradeOrdersAsksTable td {
-          /* &:nth-child(1) {
+          &:nth-child(1) {
             background: none;
-          } */
+          }
 
           &:nth-child(2) {
             background-color: rgba(244, 74, 74, 1);

@@ -1,7 +1,9 @@
+import { transformAsksAndBidsRows } from "@/helpers/transformAsksAndBidsRows";
 import { Table } from "@mantine/core";
 
 import { SortIcon } from "@/shared/ui/icon/SortIcon";
 
+import { rowsMobile } from "../OrderBook.constants";
 import classes from "../OrderBook.module.css";
 import { OrderRows } from "../OrderBook.types";
 import { Orders } from "../Orders/Orders";
@@ -29,7 +31,11 @@ export const Stocks = ({ header, rows, isPositive, cellsOrderChanged }: TablePro
           ))}
         </Table.Tr>
       </Table.Thead>
-      <Orders {...{ rows, isPositive, cellsOrderChanged }} className={cellsOrderChanged && !isPositive ? "tradeOrdersAsksTable" : ""} />
+      <Orders
+        {...{ rows, isPositive, cellsOrderChanged }}
+        rows={!isPositive ? transformAsksAndBidsRows([...rows]) : rows}
+        className={cellsOrderChanged ? classes.tradeOrdersAsksTable : ""}
+      />
     </Table>
   );
 };
