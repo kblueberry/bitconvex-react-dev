@@ -138,6 +138,10 @@
 }
 
 @media screen and (max-width: 1024px) {
+  table.rightPositionedTable {
+    border-left: 5px solid black;
+  }
+
   .tableBody {
     & tr {
       margin: 5px;
@@ -213,6 +217,10 @@
 }
 
 @media screen and (max-width: 450px) {
+  table.rightPositionedTable {
+    border-left-width: 3px;
+  }
+
   & td {
     .tableCellValue {
       font-size: 0.8em !important;

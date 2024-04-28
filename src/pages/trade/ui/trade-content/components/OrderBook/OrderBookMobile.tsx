@@ -12,7 +12,7 @@ export const OrderBookMobile = ({ activeTab, activeCategory }: { activeTab: stri
       {activeCategory === "All" && (
         <>
           <Stocks {...{ activeCategory }} rows={rowsMobile} header={headerMobile} isPositive={true} cellsOrderChanged={false} />
-          <StocksBidsOrAsks header={[...headerMobile].reverse()} rows={rowsMobile} isPositive={false} />
+          <StocksBidsOrAsks header={[...headerMobile].reverse()} rows={rowsMobile} isPositive={false} className={classes.rightPositionedTable} />
         </>
       )}
       {activeCategory === "Bids" && <StocksBidsOrAsks header={[...headerMobile].reverse()} rows={rowsMobile} isPositive={true} />}

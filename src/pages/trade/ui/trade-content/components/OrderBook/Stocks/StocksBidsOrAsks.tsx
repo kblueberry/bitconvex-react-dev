@@ -11,12 +11,13 @@ interface TableProps {
   header: Array<string>;
   rows: OrderRows;
   isPositive: boolean;
+  className?: string;
 }
 
 // TODO change order of rows on Bids tab, refactor .stocksTableReversed
-export const StocksBidsOrAsks = ({ header, rows, isPositive }: TableProps) => {
+export const StocksBidsOrAsks = ({ header, rows, isPositive, className = "" }: TableProps) => {
   return (
-    <Table>
+    <Table {...{ className }}>
       <Table.Thead className={classes.tableTHead}>
         <Table.Tr>
           {header.map((head) => (
