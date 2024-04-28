@@ -3,7 +3,6 @@ import { Table } from "@mantine/core";
 
 import { SortIcon } from "@/shared/ui/icon/SortIcon";
 
-import { rowsMobile } from "../OrderBook.constants";
 import classes from "../OrderBook.module.css";
 import { OrderRows } from "../OrderBook.types";
 import { Orders } from "../Orders/Orders";
