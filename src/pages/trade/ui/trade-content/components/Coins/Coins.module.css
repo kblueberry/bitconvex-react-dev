@@ -17,11 +17,30 @@
   }
 }
 
+.searchContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+  div {
+    flex-grow: 1;
+  }
+}
+
 .searchInputWrapper {
   flex-shrink: 0;
 }
 .searchInputSection {
   padding: 16px 0 16px 16px;
+}
+
+.closeSearchWndowIcon {
+  color: white;
+  border-radius: 8px;
+  padding-left: 30px;
+  width: 51px;
+  height: 51px;
 }
 
 .dropdown {
@@ -46,6 +65,5 @@
     left: 13px !important;
     top: 13% !important;
     width: 95% !important;
-    box-shadow: 10px 54px 0px 60px rgba(NaN, 12, 13, 0.32);
   }
 }

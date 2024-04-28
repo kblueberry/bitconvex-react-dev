@@ -1,4 +1,6 @@
-import { Button, Popover, Stack, TextInput } from "@mantine/core";
+import { useResize } from "@/hooks/useResize";
+import { Button, CloseButton, Popover, Stack, TextInput } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import clsx from "clsx";
 
 import { ArrowDown, SearchIcon } from "@/shared/ui";
@@ -9,10 +11,13 @@ import { CoinsTabs } from "./Coins.config";
 import classes from "./Coins.module.css";
 
 export const Coins = () => {
+  const { isAdaptive } = useResize(1024);
+  const [opened, { close, open }] = useDisclosure(false);
+
   return (
-    <Popover keepMounted position="top-start" offset={{ mainAxis: 1, crossAxis: -23 }}>
+    <Popover keepMounted opened={opened} position="top">
       <Popover.Target>
-        <Button bg={"transparent"} px={8} className={classes.target}>
+        <Button bg={"transparent"} px={8} className={classes.target} onClick={open}>
           <ArrowDown />
         </Button>
       </Popover.Target>
@@ -20,16 +25,19 @@ export const Coins = () => {
         <div className={classes.coinsContainer}>
           <Container>
             <Stack gap={32} h={"100%"}>
-              <TextInput
-                h={51}
-                classNames={{
-                  input: classes.searchInput,
-                  wrapper: classes.searchInputWrapper,
-                  section: classes.searchInputSection,
-                }}
-                leftSection={<SearchIcon />}
-                placeholder="Search Coin Name"
-              />
+              <div className={classes.searchContainer}>
+                <TextInput
+                  h={51}
+                  classNames={{
+                    input: classes.searchInput,
+                    wrapper: classes.searchInputWrapper,
+                    section: classes.searchInputSection,
+                  }}
+                  leftSection={<SearchIcon />}
+                  placeholder="Search Coin Name"
+                />
+                {isAdaptive && <CloseButton className={classes.closeSearchWndowIcon} onClick={close} />}
+              </div>
               <Tabs tabs={CoinsTabs} showTrack={false} indicatorRadius={8} tabControllFontSize={16} />
             </Stack>
           </Container>
