@@ -26,14 +26,29 @@
 
     .stockActions {
       flex: 1 1 95%;
+      display: flex;
 
       .actionButton {
         padding: 16px 32px;
         outline: none;
         border-radius: 8px;
         border-width: 0;
-        width: 42%;
+        flex: 1 0 40%;
         margin: 0 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .tradeActionsView {
+    .tradeActionsFlexContainer {
+      gap: 20px;
+
+      .stockActions {
+        .actionButton {
+          padding: 11px 22px;
+        }
       }
     }
   }
