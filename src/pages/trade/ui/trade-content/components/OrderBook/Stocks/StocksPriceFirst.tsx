@@ -1,5 +1,6 @@
 import { transformAsksAndBidsRows } from "@/helpers/transformAsksAndBidsRows";
 import { Table } from "@mantine/core";
+import { useEffect, useState } from "react";
 
 import { SortIcon } from "@/shared/ui/icon/SortIcon";
 
@@ -11,13 +12,20 @@ interface TableProps {
   header: Array<string>;
   rows: OrderRows;
   isPositive: boolean;
-  className?: string;
+  cellsOrderChanged: boolean;
 }
 
-// TODO change order of rows on Bids tab, refactor .stocksTableReversed
-export const StocksBidsOrAsks = ({ header, rows, isPositive, className = "" }: TableProps) => {
+export const StocksPriceFirst = ({ header, rows, isPositive, cellsOrderChanged }: TableProps) => {
+  const [stockRows, setStockRows] = useState<OrderRows>([]);
+  console.log("isPositive", isPositive, "rows original", JSON.parse(JSON.stringify(rows)));
+
+  useEffect(() => {
+    const newRows = JSON.parse(JSON.stringify(rows));
+    setStockRows(newRows);
+  }, [isPositive, rows]);
+
   return (
-    <Table {...{ className }}>
+    <Table>
       <Table.Thead className={classes.tableTHead}>
         <Table.Tr>
           {header.map((head) => (
@@ -30,7 +38,7 @@ export const StocksBidsOrAsks = ({ header, rows, isPositive, className = "" }: T
           ))}
         </Table.Tr>
       </Table.Thead>
-      <Orders {...{ isPositive }} rows={transformAsksAndBidsRows(rows)} cellsOrderChanged={true} />
+      <Orders {...{ rows, isPositive, cellsOrderChanged }} rows={stockRows} className={!cellsOrderChanged ? classes.tradeOrdersAsksTable : ""} />
     </Table>
   );
 };

@@ -178,21 +178,23 @@
           }
         }
 
-        &.tradeOrdersAsksTable td {
-          &:nth-child(1) {
-            background: none;
+        &.stocksRow {
+          &.tradeOrdersAsksTable td {
+            &:nth-child(1) {
+              background: none;
+            }
+
+            &:nth-child(2) {
+              background-color: rgba(244, 74, 74, 1);
+              color: white;
+            }
           }
 
-          &:nth-child(2) {
-            background-color: rgba(244, 74, 74, 1);
-            color: white;
-          }
-        }
-
-        &.stocksRow td {
-          &:nth-child(1) {
-            background-color: rgba(244, 74, 74, 1);
-            color: white;
+          td {
+            &:nth-child(1) {
+              background-color: rgba(244, 74, 74, 1);
+              color: white;
+            }
           }
         }
       }

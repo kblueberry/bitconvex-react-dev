@@ -11,13 +11,12 @@ interface TableProps {
   header: Array<string>;
   rows: OrderRows;
   isPositive: boolean;
-  cellsOrderChanged: boolean;
+  className?: string;
 }
 
-// TODO change order of rows on Bids t∏ab, refactor .stocksTableReversed
-export const Stocks = ({ header, rows, isPositive, cellsOrderChanged }: TableProps) => {
+export const StocksBtcFirst = ({ header, rows, isPositive, className = "" }: TableProps) => {
   return (
-    <Table>
+    <Table {...{ className }}>
       <Table.Thead className={classes.tableTHead}>
         <Table.Tr>
           {header.map((head) => (
@@ -30,11 +29,7 @@ export const Stocks = ({ header, rows, isPositive, cellsOrderChanged }: TablePro
           ))}
         </Table.Tr>
       </Table.Thead>
-      <Orders
-        {...{ rows, isPositive, cellsOrderChanged }}
-        rows={!isPositive ? transformAsksAndBidsRows([...rows]) : rows}
-        className={cellsOrderChanged ? classes.tradeOrdersAsksTable : ""}
-      />
+      <Orders {...{ isPositive }} rows={transformAsksAndBidsRows(rows)} cellsOrderChanged={true} />
     </Table>
   );
 };

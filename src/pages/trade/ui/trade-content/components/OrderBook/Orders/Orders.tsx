@@ -12,6 +12,8 @@ interface BidsProps {
 }
 
 export const Orders = ({ rows, isPositive, cellsOrderChanged, className = "" }: BidsProps) => {
+  console.log("cells changed", cellsOrderChanged);
+
   return (
     <Table.Tbody className={classes.tableBody}>
       {rows.map((row) => (
