@@ -2,3 +2,16 @@
   align-self: stretch;
   max-height: 1134px;
 }
+
+.tradeTabContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .tradeTabContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -8,3 +8,9 @@
   font-family: "ProximaNova";
   color: var(--color-grey);
 }
+
+@media screen and (max-width: 700px) {
+  .containerScrolled {
+    overflow-x: scroll;
+  }
+}

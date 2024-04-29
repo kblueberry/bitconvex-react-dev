@@ -5,3 +5,37 @@
   width: 100%;
   height: 100%;
 }
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 32px 20px !important;
+  }
+
+  .payment {
+    flex: 1 1 75%;
+  }
+
+  .ordersAll {
+    flex: 1 1 25%;
+
+    .container {
+      padding: 15px 20px !important;
+
+      .tableBody {
+        & tr {
+          & td {
+            .tableCellValue {
+              font-size: 0.6em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .ordersAll {
+    margin-left: 0;
+  }
+}

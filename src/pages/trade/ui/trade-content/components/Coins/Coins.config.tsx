@@ -14,13 +14,13 @@ export const CoinsTabs: Tab[] = [
     id: "usdt",
   },
   {
-    title: "BUSD",
-    content: <CoinsTable />,
-    id: "busd",
-  },
-  {
     title: "FIAT",
     content: <CoinsTable />,
     id: "fiat",
+  },
+  {
+    title: "FAV",
+    content: <CoinsTable />,
+    id: "fav",
   },
 ];

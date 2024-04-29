@@ -32,7 +32,9 @@ export const Tabs = ({
             onClick={() => onChangeTab(tab)}
             key={tab.id}
           >
-            <p style={{ fontSize: tabControllFontSize }}>{tab.title}</p>
+            <p className={classes.tabLabel} style={{ fontSize: tabControllFontSize }}>
+              {tab.title}
+            </p>
           </button>
         ))}
         {showTrack && <div className={classes.indicatorTrack}></div>}

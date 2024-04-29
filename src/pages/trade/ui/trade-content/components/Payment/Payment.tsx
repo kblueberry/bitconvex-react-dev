@@ -1,8 +1,12 @@
-import { Stack } from "@mantine/core";
+import { useResize } from "@/hooks/useResize";
+import { Group, Stack, Text } from "@mantine/core";
 
 import { Tabs } from "@/shared/ui/tabs";
 
+import { Coins } from "../Coins/Coins";
 import { Container } from "../Container/Container";
+import containerClasses from "../Container/Container.module.css";
+import classes from "../TradeChart/TradeChart.module.css";
 import { BuyTab } from "./components/tabs/BuyTab/BuyTab";
 import { SellTab } from "./components/tabs/SellTab/SellTab";
 
@@ -11,10 +15,23 @@ const tabs = [
   { id: "sell", title: "Sell", content: <SellTab /> },
 ];
 export const Payment = () => {
+  const { isAdaptive } = useResize(1024);
+
   return (
-    <Stack>
+    <Stack className={containerClasses.payment}>
       <Container>
-        <Tabs overflowContainer={false} tabs={tabs} />
+        {isAdaptive && (
+          <>
+            <Group gap={8} className={classes.tradeChartWrapper}>
+              <Text className={classes.tradeChartTitle}>Bitcoin/USDT Chart</Text>
+              <Coins />
+            </Group>
+          </>
+        )}
+
+        <Group mt={20} mb={32}>
+          <Tabs overflowContainer={false} tabs={tabs} />
+        </Group>
       </Container>
     </Stack>
   );

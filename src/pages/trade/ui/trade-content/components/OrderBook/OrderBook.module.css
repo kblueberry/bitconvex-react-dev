@@ -5,6 +5,7 @@
 }
 .orderBookButtonsWrapper {
   display: flex;
+  flex-flow: row wrap;
   gap: 16px;
 }
 .orderBooksButton {
@@ -57,7 +58,7 @@
       color: rgb(14, 203, 123);
     }
     &.negative td:first-child {
-      color: rgb(228, 34, 34);
+      color: rgba(244, 74, 74, 1);
     }
     &:last-child td {
       border-bottom: none;
@@ -101,6 +102,135 @@
     background-color: rgb(14, 203, 123);
   }
   &.negative {
-    background-color: rgb(228, 34, 34);
+    background-color: rgba(244, 74, 74, 1);
+  }
+}
+
+.tradeOrderBookInfo {
+  padding: 20px 0 20px 10px;
+  font-family: "ProximaNova";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.2px;
+  color: rgb(14, 203, 123);
+}
+
+.tabsWrapper {
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+
+  .tabBadge {
+    flex: 1 0 40%;
+  }
+}
+
+.flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.columnDirected {
+  flex-direction: column;
+}
+
+.rowDirected {
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1024px) {
+  table.rightPositionedTable {
+    border-left: 5px solid #0c0d10;
+  }
+
+  .tableBody {
+    & tr {
+      margin: 5px;
+
+      &.positive {
+        &.stocksRowReversed td {
+          &:nth-child(1) {
+            background-color: rgba(90, 222, 167, 1);
+            color: white;
+          }
+
+          &:nth-child(2) {
+            background: transparent;
+            color: rgba(90, 222, 167, 1);
+          }
+        }
+
+        &.stocksRow td {
+          &:nth-child(2) {
+            background-color: rgba(90, 222, 167, 1);
+            color: white;
+          }
+        }
+      }
+
+      &.negative {
+        &.stocksRowReversed td {
+          &:nth-child(1) {
+            background-color: rgba(244, 74, 74, 1);
+            color: white;
+          }
+
+          &:nth-child(2) {
+            background: transparent;
+            color: rgba(244, 74, 74, 1);
+          }
+        }
+
+        &.stocksRow {
+          &.tradeOrdersAsksTable td {
+            &:nth-child(1) {
+              background: none;
+              color: rgba(244, 74, 74, 1);
+            }
+
+            &:nth-child(2) {
+              background-color: rgba(244, 74, 74, 1);
+              color: white;
+            }
+          }
+
+          td {
+            &:nth-child(1) {
+              background-color: rgba(244, 74, 74, 1);
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ordersAll {
+    .tableBody {
+      & tr {
+        & td {
+          .tableCellValue {
+            font-size: 0.6em;
+          }
+        }
+      }
+    }
+  }
+
+  .tradeOrderBookInfo {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  table.rightPositionedTable {
+    border-left-width: 3px;
+  }
+
+  & td {
+    .tableCellValue {
+      font-size: 0.8em !important;
+      line-height: 17px;
+    }
   }
 }
