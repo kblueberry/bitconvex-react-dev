@@ -155,6 +155,7 @@
 
           &:nth-child(2) {
             background: transparent;
+            color: rgba(90, 222, 167, 1);
           }
         }
 
@@ -175,6 +176,7 @@
 
           &:nth-child(2) {
             background: transparent;
+            color: rgba(244, 74, 74, 1);
           }
         }
 
@@ -182,6 +184,7 @@
           &.tradeOrdersAsksTable td {
             &:nth-child(1) {
               background: none;
+              color: rgba(244, 74, 74, 1);
             }
 
             &:nth-child(2) {
