@@ -18,8 +18,6 @@ export const OrderBookAll = ({ header }: { header: Array<string> }) => {
     setStockRows(slicedRows);
   }, []);
 
-  console.log("Orders all rows: ", stockRows);
-
   return (
     <Stack className={containerClasses.ordersAll}>
       <Container>

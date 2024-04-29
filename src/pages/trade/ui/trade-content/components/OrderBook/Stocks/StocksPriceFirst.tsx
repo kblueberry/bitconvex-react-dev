@@ -17,7 +17,6 @@ interface TableProps {
 
 export const StocksPriceFirst = ({ header, rows, isPositive, cellsOrderChanged }: TableProps) => {
   const [stockRows, setStockRows] = useState<OrderRows>([]);
-  console.log("isPositive", isPositive, "rows original", JSON.parse(JSON.stringify(rows)));
 
   useEffect(() => {
     const newRows = JSON.parse(JSON.stringify(rows));
