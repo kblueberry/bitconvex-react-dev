@@ -41,7 +41,7 @@ export const TradeContent = () => {
               <TradeHistory />
             </>
           )}
-          <TradeActions />
+          {activeCategory === "Chart" && <TradeActions />}
         </Group>
       ) : (
         <>

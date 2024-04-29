@@ -67,9 +67,18 @@
 
     tbody {
       td {
-        font-size: 20px;
+        font-size: 1.1em !important;
         line-height: 16.8px;
         padding-right: 3em;
+
+        &.green,
+        &.red {
+          font-size: 16px;
+        }
+
+        &:nth-child(2) {
+          padding-right: 4.5em;
+        }
 
         &:nth-child(3) {
           padding-right: 5em;
