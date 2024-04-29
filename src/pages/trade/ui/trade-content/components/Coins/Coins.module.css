@@ -41,6 +41,10 @@
   padding-left: 30px;
   width: 51px;
   height: 51px;
+
+  &:active {
+    background-color: transparent;
+  }
 }
 
 .dropdown {
@@ -62,9 +66,10 @@
   }
 
   .dropdown {
+    position: fixed;
     left: 13px !important;
-    top: 13% !important;
+    top: 15% !important;
     width: 95% !important;
-    box-shadow: 10px 111px 138px 62px rgba(12, 13, 16, 0.8);
+    box-shadow: 10px 10px 98px 57px rgba(12, 13, 16, 0.8);
   }
 }
