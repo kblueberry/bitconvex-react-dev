@@ -19,6 +19,7 @@
       font-size: 16px;
       font-weight: 400;
       font-family: "ProximaNova";
+      text-wrap: nowrap;
       &.green {
         color: var(--color-green);
       }
@@ -61,13 +62,18 @@
 @media screen and (max-width: 1024px) {
   .table {
     th {
-      font-size: 0.8em;
+      font-size: 17px;
     }
 
     tbody {
       td {
-        font-size: 1em !important;
+        font-size: 20px;
         line-height: 16.8px;
+        padding-right: 3em;
+
+        &:nth-child(3) {
+          padding-right: 5em;
+        }
 
         .closeButton {
           width: 24px;

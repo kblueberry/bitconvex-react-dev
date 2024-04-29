@@ -121,7 +121,7 @@
   width: 100vw;
 
   .tabBadge {
-    width: 50%;
+    flex: 1 0 40%;
   }
 }
 
@@ -140,7 +140,7 @@
 
 @media screen and (max-width: 1024px) {
   table.rightPositionedTable {
-    border-left: 5px solid black;
+    border-left: 5px solid #0c0d10;
   }
 
   .tableBody {
